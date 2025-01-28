@@ -58,12 +58,13 @@ main{
     width: fit-content;
     margin: auto;
     position: relative;
-    top: -10px;
+    top: -20px;
     left: 0;
     right: 0;
-    outline: solid magenta;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
+    box-shadow: 0px 0px 5px #0E0E0E60;
 }
 
 .search-input{
@@ -74,16 +75,27 @@ main{
     font-size: .875rem;
     border: none;
     outline: none;
+    border-radius: 2.5px 0px 0px 2.5px;
 }
 
+/* buttons */
 .btn{
     cursor: pointer;
     font-family: inherit;
+    border: none;
+}
+
+.btn-search{
+    padding: 0.625em 2.25em;
+    background-color: #F9FAFB;
+    border-left: 1px solid #D1D5DB;
+    border-radius: 0px 2.5px 2.5px 0px;
 }
 
 /* font-awesome */
 .fa-solid{
     position: absolute;
-    margin-block: auto;
+    left: 0;
+    margin: .5em .8em;
 }
 
