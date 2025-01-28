@@ -16,6 +16,19 @@ body{
     font-family: var(--font-family);
 }
 
+.container{
+    max-width: 800px;
+    width: 80%;
+    margin-inline: auto;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
 /* =============
     Typography
 ================ */
@@ -26,11 +39,21 @@ h1{
     color: #FFF;
 }
 
+h3{<i class="fa-solid fa-clipboard-list"></i>
+    font-weight: 500;
+}
+
 header a{
-    font-size: .8rem;
+    font-size: 1rem;
     text-decoration: none;
     color: #FFF;
     font-weight: 700;
+}
+
+.movie-container p{
+    line-height: 1.4;
+    letter-spacing: .2px;
+    color: #6B7280;
 }
 
 /* =========
@@ -39,14 +62,24 @@ header a{
 
 header{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: #0E0E0E;
     background: url('/assets/movie-poster.jpg'), linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay;
-    padding: 5em 2.5em;
+    padding-block: 5em;
+}
+
+header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a:hover{
+    text-decoration: underline;
 }
 
 main{
@@ -55,7 +88,6 @@ main{
 
 .search-bar{
     max-width: 470px;
-    width: fit-content;
     margin: auto;
     position: relative;
     top: -20px;
@@ -65,6 +97,7 @@ main{
     display: flex;
     justify-content: center;
     box-shadow: 0px 0px 5px #0E0E0E60;
+    margin-bottom: 1.375em;
 }
 
 .search-input{
@@ -92,8 +125,71 @@ main{
     border-radius: 0px 2.5px 2.5px 0px;
 }
 
+/* movie-list */
+
+.movie-list-container{
+    width: 80%;
+    margin: auto;
+}
+
+.movie-name-rating-container,
+.movie-genre-container,
+.movie-container,
+.add-watchlist,
+.movie-rating{
+    display: flex;
+
+}
+
+.movie-name-rating-container,
+.movie-container,
+.add-watchlist
+{
+    align-items: center;
+}
+
+.movie-name-rating-container,
+.movie-container{
+    gap: 1em;
+}
+
+.movie-genre-container{
+    justify-content: space-between;
+}
+
+.movie-container{
+    padding-block: 1.25em;
+}
+
+.add-watchlist{
+    text-decoration: none;
+    color: #0E0E0E;
+}
+
+.movie-poster{
+    flex: 1;
+}
+
+.duration{
+    margin-right: 1.5em;
+}
+
+.movie-list-container > *:not(:last-child) {
+    border-bottom: 2px solid #E5E7EB;
+  }
+
+.add-watchlist:hover{
+    opacity: .8;
+}
+
+
+
 /* font-awesome */
 .fa-solid{
+    margin-right: .25em;
+}
+
+.fa-magnifying-glass{
     position: absolute;
     left: 0;
     margin: .5em .8em;
