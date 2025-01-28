@@ -53,14 +53,37 @@ main{
     position: relative;
 }
 
-form{
-    position: absolute;
+.search-bar{
+    max-width: 470px;
+    width: fit-content;
+    margin: auto;
+    position: relative;
     top: -10px;
     left: 0;
     right: 0;
     outline: solid magenta;
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+
+.search-input{
+    flex: 1;
+    padding: 0.625em 2.625em;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: .875rem;
+    border: none;
+    outline: none;
+}
+
+.btn{
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* font-awesome */
+.fa-solid{
+    position: absolute;
+    margin-block: auto;
 }
 
