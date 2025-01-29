@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Movie watch-list</title>
+
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>My Watchlist</h1>
+            <a href="index.html" class="watch-list-link"><i class="fa-solid fa-magnifying-glass-plus"></i>Search for movies</a>
+        </div>
+    </header>
+    <main class="container">
+        <div class="movie-list-container" id="movie-watch-list">
+            <div class="movie-container">
+                <img src="./assets/image 33.png" alt="" class="movie-poster">
+                <div class="movie-metadata">
+                    <div class="movie-name-rating-container">
+                        <h3 class="movie-name">Blade Runner</h3>
+                        <span class="movie-rating"><i class="fa-solid fa-star" style="color: #FFD43B;"></i>8.1</span>
+                    </div>
+                    <div class="movie-genre-container">
+                        <div class="movie-duration-genre-container">
+                            <span class="duration">117 min</span>
+                            <span class="genre">Action, Drama, Sci-fi</span>
+                        </div>
+                        <a href="watchlist.html" class="add-watchlist"><i class="fa-solid fa-circle-plus"></i>Watchlist</a>
+                    </div>
+                    <p>A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

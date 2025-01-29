@@ -39,7 +39,7 @@ h1{
     color: #FFF;
 }
 
-h3{<i class="fa-solid fa-clipboard-list"></i>
+h3{
     font-weight: 500;
 }
 
@@ -148,12 +148,12 @@ main{
     align-items: center;
 }
 
-.movie-name-rating-container,
 .movie-container{
     gap: 1em;
 }
 
 .movie-genre-container{
+    width: 100%;
     justify-content: space-between;
 }
 
@@ -167,16 +167,29 @@ main{
 }
 
 .movie-poster{
-    flex: 1;
+    width: 25%;
+}
+
+.movie-rating{
+    margin-left: 1em;
 }
 
 .duration{
-    margin-right: 1.5em;
+    margin-right: 1em;
+}
+
+.movie-metadata {
+    flex: 1;
+    min-width: 0;
+}
+
+.movie-duration-genre-container {
+    min-width: 0;
 }
 
 .movie-list-container > *:not(:last-child) {
     border-bottom: 2px solid #E5E7EB;
-  }
+}
 
 .add-watchlist:hover{
     opacity: .8;
