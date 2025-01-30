@@ -1,4 +1,5 @@
 const movieListContainer = document.getElementById('movie-list');
+const movieWatchListContainer = document.getElementById('movie-watch-list');
 const form = document.getElementById('movie-search');
 
 form.addEventListener('submit', (e) => {
@@ -37,7 +38,7 @@ function renderMovieElement(movieData){
                             <span class="duration">${movie['Runtime']}</span>
                             <span class="genre">${movie['Genre']}</span>
                         </div>
-                        <a href="#" class="add-watchlist"><i class="fa-solid fa-circle-plus"></i>Watchlist</a>
+                        <a href="#" class="add-watchlist" data-id=${movie.imdbID}><i class="fa-solid fa-circle-plus"></i>Watchlist</a>
                     </div>
                     <p>${movie['Plot']}</p>
                 </div>
@@ -45,6 +46,19 @@ function renderMovieElement(movieData){
         `
     });
     movieListContainer.innerHTML = html;
+    addMovieWatchlist();
+}
+
+function addMovieWatchlist(){
+    document.querySelectorAll('.add-watchlist').forEach(element => {
+        element.addEventListener('click', (e) => {
+            e.preventDefault();
+            let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+            watchlist.push(e.currentTarget.dataset.id);
+            localStorage.setItem('watchlist', JSON.stringify(watchlist));
+            console.log(watchlist);
+        });
+    });
 }
 
 getMovies();
