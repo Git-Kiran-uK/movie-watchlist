@@ -161,7 +161,8 @@ main{
     padding-block: 1.25em;
 }
 
-.add-watchlist{
+.add-watchlist,
+.remove-watchlist{
     text-decoration: none;
     color: #0E0E0E;
 }
@@ -192,10 +193,12 @@ main{
 }
 
 .add-watchlist:hover{
-    opacity: .8;
+    color: #24da3c;
 }
 
-
+.remove-watchlist:hover{
+    color: #EE2020;
+}
 
 /* font-awesome */
 .fa-solid{

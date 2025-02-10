@@ -6,8 +6,8 @@ async function getMovies(search = 'Batman', id = '') {
         const data = await response.json();
         if (!data || data.Response === "False") return [];
 
-        return id 
-            ? data 
+        return id
+            ? data
             : Promise.all(data['Search'].map(movie =>
                   fetch(`http://www.omdbapi.com/?apikey=4850e0ba&i=${movie.imdbID}`)
                       .then(res => res.json())
@@ -42,7 +42,7 @@ function getHTML(movieData, addToWatchList = false, html = '') {
                             <span class="duration">${movie.Runtime}</span>
                             <span class="genre">${movie.Genre}</span>
                         </div>
-                        <a href="#" class="${addToWatchList ? 'add-watchlist' : 'remove-watchlist'}" 
+                        <a href="#" class="${addToWatchList ? 'add-watchlist' : 'remove-watchlist'}"
                            data-id="${movie.imdbID}" data-title="${movie.Title}">
                            <i class="fa-solid fa-circle-${addToWatchList ? 'plus' : 'minus'}"></i>
                            ${addToWatchList ? 'Watchlist' : 'Remove'}
@@ -81,11 +81,11 @@ function addClickEvent(operation) {
 
 async function displayMovieWatchlist() {
     const movieWatchList = JSON.parse(localStorage.getItem('watchlist')) || [];
-    
+
     const movieList = await Promise.all(
         movieWatchList.map(async movie => await getMovies(movie.movieTitle, movie.movieId))
     );
-    
+
     const movieWatchListContainer = document.getElementById('movie-watch-list');
     movieWatchListContainer.innerHTML = getHTML(movieList);
     addClickEvent('remove');
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
             renderMovieElement(movieTitle);
         });
     }
-    
+
     if (document.getElementById('movie-watch-list')) {
         console.log('Watchlist DOM is loaded');
         displayMovieWatchlist();
